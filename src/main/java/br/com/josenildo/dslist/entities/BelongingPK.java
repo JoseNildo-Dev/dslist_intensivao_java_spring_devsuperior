@@ -3,9 +3,17 @@ package br.com.josenildo.dslist.entities;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Embeddable
 public class BelongingPK {
 
@@ -15,30 +23,6 @@ public class BelongingPK {
     @ManyToOne
     @JoinColumn(name = "list_id")
     private GameList list;
-
-    public BelongingPK() {
-    }
-
-    public BelongingPK(Game game, GameList list) {
-        this.game = game;
-        this.list = list;
-    }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public GameList getList() {
-        return list;
-    }
-
-    public void setList(GameList list) {
-        this.list = list;
-    }
 
     @Override
     public boolean equals(Object o) {

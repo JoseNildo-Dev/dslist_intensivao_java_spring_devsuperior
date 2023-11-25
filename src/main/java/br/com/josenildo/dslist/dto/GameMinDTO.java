@@ -2,7 +2,12 @@ package br.com.josenildo.dslist.dto;
 
 import br.com.josenildo.dslist.entities.Game;
 import br.com.josenildo.dslist.projections.GameMinProjections;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+
+@Getter
+@NoArgsConstructor
 public class GameMinDTO {
 
     private Long id;
@@ -10,9 +15,6 @@ public class GameMinDTO {
     private Integer year;
     private String imgUrl;
     private String shortDescription;
-
-    public GameMinDTO() {
-    }
 
     public GameMinDTO(Game entity) {
         id = entity.getId();
@@ -28,25 +30,5 @@ public class GameMinDTO {
         year = projection.getGameYear();
         imgUrl = projection.getImgUrl();
         shortDescription = projection.getShortDescription();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public String getShortDescription() {
-        return shortDescription;
     }
 }

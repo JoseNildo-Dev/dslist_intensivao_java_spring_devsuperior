@@ -3,11 +3,18 @@ package br.com.josenildo.dslist.entities;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
+
 @Entity
 @Table(name = "tb_belonging")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Belonging {
 
     @EmbeddedId
@@ -15,28 +22,10 @@ public class Belonging {
 
     private Integer position;
 
-    public Belonging() {
-    }
 
     public Belonging(Game game, GameList list, Integer position) {
         id.setGame(game);
         id.setList(list);
-        this.position = position;
-    }
-
-    public BelongingPK getId() {
-        return id;
-    }
-
-    public void setId(BelongingPK id) {
-        this.id = id;
-    }
-
-    public Integer getPosition() {
-        return position;
-    }
-
-    public void setPosition(Integer position) {
         this.position = position;
     }
 
